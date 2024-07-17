@@ -1,0 +1,120 @@
+
+<div class="formfull">
+  <div class="container d-grid mx-auto">
+    <div class="mx-auto" style="width: 300px; text-align: center;">
+      <h1>Formulario</h1>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="myForm" (ngSubmit)="onSave()" autocomplete="off">
+            <!-- Campo de Nombre -->
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label">Nombres</label>
+              <div class="col-sm-6">
+                <input type="text"
+                      class="form-control"
+                      formControlName="name"
+                      placeholder="Nombre">
+                <span
+                  *ngIf="myForm.controls['name'].getError('required') && myForm.controls['name'].touched"
+                  class="form-text text-danger">
+                  <!-- Debe de ser de 3 letras -->
+                  Este campo es obligatorio
+                </span>
+                <span
+                  *ngIf="myForm.controls['name'].getError('minlength') && myForm.controls['name'].touched"
+                  class="form-text text-danger">
+                  <!-- Debe de ser de 3 letras -->
+                  Este campo debe tener minimo 3 letras
+                </span>
+
+              </div>
+            </div>
+            <!-- Campo de Apellido -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Apellido</label>
+                <div class="col-sm-6">
+                    <input type="text"
+                          class="form-control"
+                          formControlName="apellido"
+                          placeholder="Apellido">
+                <span
+                  *ngIf="myForm.controls['apellido'].getError('required') && myForm.controls['apellido'].touched"
+                  class="form-text text-danger">
+                  Este campo es obligatorio
+                </span>
+                </div>
+            </div>
+            <!-- Campo de Fumas -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Fumas</label>
+                <div class="col-sm-6">
+                    <input type="checkbox"
+                          class="form-control"
+                          formControlName="fumas"
+                          placeholder="Existencias del producto">
+
+                          <span
+                          *ngIf="myForm.controls['fumas'].getError('required')"
+                          class="form-text text-danger">
+                          Este campo es obligatorio
+                        </span>
+                </div>
+            </div>
+            <!-- Campo de Actualmente practicas lectura -->
+            <div *ngIf="myForm.getRawValue" class="mb-3 row">
+              <label class="col-sm-3 col-form-label">¿Actualmete Practicas lectura?</label>
+              <div class="col-sm-6">
+                  <input type="checkbox"
+                        class="form-control"
+                        formControlName="currentRead"
+                        placeholder="Existencias del producto">
+
+              </div>
+            </div>
+          <!-- Campo de Libros leidos ultimos 3 meses -->
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Libros leidos ultimos 3 meses</label>
+          <div class="col-sm-3">
+            <div style="display: inline-flex;">
+              <input type="text"
+                    class="form-control"
+                    formControlName="lastTreeBooks"
+                    placeholder="Agrega un libro">
+            </div>
+          </div>
+          <div class="col-sm-4">
+              <div style="display: inline-flex;">
+                <button type="button" style="margin-left: 5px; "  class="btn btn-primary">Agrega  otro libro</button><br>
+              </div>
+          </div>
+        </div>
+        <!-- Campo de Estado civil -->
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Estado Civil</label>
+          <div class="col-sm-6">
+              <input type="text"
+                    class="form-control"
+                    formControlName="civil"
+                    placeholder="Estado civil">
+              <span class="form-text text-danger">
+
+              </span>
+          </div>
+      </div>
+      <div class="mx-auto" style="width: 300px; text-align: center;">
+        <div class="row">
+          <div class="col">
+              <button type="submit"
+                      class="btn btn-primary float-end">
+                  Guardar
+              </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
