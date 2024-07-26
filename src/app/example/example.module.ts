@@ -7,6 +7,7 @@ import { ConversionsComponent } from './pages/conversions/conversions.component'
 import { DateComponent } from './pages/date/date.component';
 import { FormComponent } from './pages/form/form.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -16,12 +17,14 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
     ConversionsComponent,
     DateComponent,
     FormComponent,
-    WelcomeComponent
+    WelcomeComponent,
   ],
   imports: [
     CommonModule,
     ExampleRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    MatDialogModule
+  ],
+  entryComponents:[MatDialogModule],
 })
 export class ExampleModule { }

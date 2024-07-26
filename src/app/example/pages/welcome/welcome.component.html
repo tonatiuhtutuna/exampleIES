@@ -11,8 +11,14 @@
     </div>
 
     <div  class="mx-auto" style="width: 300px;  text-align: center;">
-      <button class="btn btn-primary btn-lg rounded-pill">Escribre tu nombre</button>
+      <button (click)="openDialog()" class="btn btn-primary btn-lg rounded-pill">Escribre tu nombre</button>
     </div>
+    <br>
+    <div *ngIf="true" class="mx-auto" style="width: 300px;  text-align: center;">
+      <h3>Nombre ingresado: Andres</h3><h3>Cambio de letras: Smith</h3>
+    </div>
+
+
 
   </div>
 
